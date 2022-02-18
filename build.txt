@@ -1,0 +1,3 @@
+displayName = Ammunition Workshop mod
+author = KIRILLAND
+version = 0.1
