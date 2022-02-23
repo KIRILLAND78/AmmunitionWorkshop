@@ -13,13 +13,13 @@ namespace AmmunitionWorkshop.Bullets.Hellstone
 
 		public override void SetDefaults()
 		{
-			Item.damage = 8; 
+			Item.damage = 9; 
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 8;
 			Item.height = 8;
 			Item.maxStack = 999;
 			Item.consumable = true; 
-			Item.knockBack = 1f;
+			Item.knockBack = 2f;
 			Item.value = 10;
 			Item.rare = ItemRarityID.Green;
 			Item.shoot = ModContent.ProjectileType<HellstoneBulletP>();
@@ -30,8 +30,8 @@ namespace AmmunitionWorkshop.Bullets.Hellstone
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes()
 		{
-			CreateRecipe(20)
-				.AddIngredient(ItemID.Amber)
+			CreateRecipe(70)
+				.AddIngredient(ItemID.HellstoneBar)
 				.Register();
 		}
 	}

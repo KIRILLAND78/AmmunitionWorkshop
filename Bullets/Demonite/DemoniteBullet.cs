@@ -12,7 +12,7 @@ namespace AmmunitionWorkshop.Bullets.Demonite
 
 		public override void SetDefaults()
 		{
-			Item.damage = 22; 
+			Item.damage = 9; 
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 8;
 			Item.height = 8;
@@ -30,7 +30,8 @@ namespace AmmunitionWorkshop.Bullets.Demonite
 		public override void AddRecipes()
 		{
 			CreateRecipe(70)
-				.AddIngredient(ItemID.AdamantiteBar)
+				.AddIngredient(ItemID.DemoniteBar)
+				.AddIngredient(ItemID.MusketBall, 70)
 				.Register();
 		}
 	}

@@ -33,7 +33,7 @@ namespace AmmunitionWorkshop.Bullets.Amethyst
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
-			if (Main.rand.Next(1,4) == 1)
+			if (Main.rand.Next(1,5) == 1)
 			{
 				Main.player[Projectile.owner].statMana += damage / 10;
 				Main.player[Projectile.owner].ManaEffect(damage / 10);

@@ -7,7 +7,7 @@ namespace AmmunitionWorkshop.Bullets.Shroomite
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Fired bullets will ????.");
+			Tooltip.SetDefault("Fired bullets will chase after your enemies and penetrate them once.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 
@@ -30,8 +30,9 @@ namespace AmmunitionWorkshop.Bullets.Shroomite
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes()
 		{
-			CreateRecipe(20)
-				.AddIngredient(ItemID.Amber)
+			CreateRecipe(60)
+				.AddIngredient(ItemID.ShroomiteBar)
+				.AddIngredient(ItemID.MusketBall,60)
 				.Register();
 		}
 	}

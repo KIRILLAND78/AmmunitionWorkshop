@@ -12,13 +12,13 @@ namespace AmmunitionWorkshop.Bullets.Platinum
 
 		public override void SetDefaults()
 		{
-			Item.damage = 22; 
+			Item.damage = 10; 
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 8;
 			Item.height = 8;
 			Item.maxStack = 999;
 			Item.consumable = true; 
-			Item.knockBack = 3.5f;
+			Item.knockBack = 3f;
 			Item.value = 10;
 			Item.rare = ItemRarityID.Green;
 			Item.shoot = ModContent.ProjectileType<PlatinumBulletP>();
@@ -30,7 +30,8 @@ namespace AmmunitionWorkshop.Bullets.Platinum
 		public override void AddRecipes()
 		{
 			CreateRecipe(70)
-				.AddIngredient(ItemID.AdamantiteBar)
+				.AddIngredient(ItemID.PlatinumBar)
+				.AddIngredient(ItemID.MusketBall, 70)
 				.Register();
 		}
 	}

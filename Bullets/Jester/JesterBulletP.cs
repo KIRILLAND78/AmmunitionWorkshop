@@ -6,13 +6,13 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-namespace AmmunitionWorkshop.Bullets.Topaz
+namespace AmmunitionWorkshop.Bullets.Jester
 {
-	public class TopazBulletP : ModProjectile
+	public class JesterBulletP : ModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Topaz Bullet");
+			DisplayName.SetDefault("Jester Bullet");
 		}
 
 		public override void SetDefaults()
@@ -31,14 +31,19 @@ namespace AmmunitionWorkshop.Bullets.Topaz
 			AIType = ProjectileID.Bullet; // Act exactly like default Bullet
 		}
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void AI()
         {
-			if (Main.rand.Next(1, 3) == 1)
-			{
-				Main.player[Projectile.owner].statMana += damage * 3 / 20;
-				Main.player[Projectile.owner].ManaEffect(damage * 3 / 20);
+
+			if (Projectile.timeLeft == 597)
+            {
+				Projectile.damage = (int)(0.83f * Projectile.damage);
+				int b =Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, Projectile.velocity.RotatedBy(15 * MathHelper.Pi / 180), Projectile.type, Projectile.damage, Projectile.knockBack, Projectile.owner);
+				Main.projectile[b].timeLeft = 596;
+				b = Projectile.NewProjectile(Projectile.InheritSource(Projectile), Projectile.Center, Projectile.velocity.RotatedBy(-15 * MathHelper.Pi / 180), Projectile.type,Projectile.damage, Projectile.knockBack, Projectile.owner);
+				Main.projectile[b].timeLeft = 596;
+				//Projectile.Kill();
 			}
-            base.OnHitNPC(target, damage, knockback, crit);
+            base.AI();
         }
 
         public override bool PreDraw(ref Color lightColor)

@@ -50,7 +50,7 @@ namespace AmmunitionWorkshop.Bullets.Shroomite
 					//Main.NewText(MathHelper.ToDegrees(Projectile.velocity.ToRotation()));
 					float angle = ((-Projectile.Center + target.Center).ToRotation() + ((-Projectile.Center + target.Center).ToRotation() < 0 ? MathHelper.TwoPi : 0) - Projectile.velocity.ToRotation() - (Projectile.velocity.ToRotation() < 0 ? MathHelper.TwoPi : 0) * -1) % MathHelper.TwoPi;
 					angle = angle > MathHelper.Pi ? -(MathHelper.TwoPi - angle) : angle;
-					Main.NewText(MathHelper.ToDegrees(angle));
+					Main.player[Main.myPlayer].GetModPlayer<AmmWorkhopModPl>().GetArrayItems();
 					Projectile.velocity = Projectile.velocity.RotatedBy(Math.Clamp(angle, (-MathHelper.Pi / 36), (MathHelper.Pi / 36)));
 
 				}
@@ -60,7 +60,7 @@ namespace AmmunitionWorkshop.Bullets.Shroomite
 					float g = 0;
 					for (int i = 0; i < Main.maxNPCs; i++)
 					{
-						if (Vector2.Distance(Main.npc[i].Center, Projectile.Center) <= 200)
+						if (Vector2.Distance(Main.npc[i].Center, Projectile.Center) <= 200 && Main.npc[i].active && !Main.npc[i].friendly && Main.npc[i].type != NPCID.TargetDummy)
 							if (g < Vector2.Distance(Main.npc[i].Center, Projectile.Center)) buffer = Main.npc[i];
 
 					}

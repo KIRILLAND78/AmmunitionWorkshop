@@ -13,7 +13,7 @@ namespace AmmunitionWorkshop.Bullets.Ice
 
 		public override void SetDefaults()
 		{
-			Item.damage = 22; 
+			Item.damage = 11; 
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 8;
 			Item.height = 8;
@@ -30,8 +30,8 @@ namespace AmmunitionWorkshop.Bullets.Ice
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes()
 		{
-			CreateRecipe(70)
-				.AddIngredient(ItemID.AdamantiteBar)
+			CreateRecipe(333)
+				.AddIngredient(ItemID.FrostCore)
 				.Register();
 		}
 	}

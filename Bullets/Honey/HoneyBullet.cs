@@ -13,13 +13,13 @@ namespace AmmunitionWorkshop.Bullets.Honey
 
 		public override void SetDefaults()
 		{
-			Item.damage = 8; 
+			Item.damage = 7; 
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 8;
 			Item.height = 8;
 			Item.maxStack = 999;
 			Item.consumable = true; 
-			Item.knockBack = 1f;
+			Item.knockBack = 2f;
 			Item.value = 10;
 			Item.rare = ItemRarityID.Green;
 			Item.shoot = ModContent.ProjectileType<HoneyBulletP>();
@@ -30,8 +30,9 @@ namespace AmmunitionWorkshop.Bullets.Honey
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes()
 		{
-			CreateRecipe(20)
-				.AddIngredient(ItemID.Amber)
+			CreateRecipe(9)
+				.AddIngredient(ItemID.MusketBall, 9)
+				.AddCondition(new Terraria.Recipe.Condition[1] { Terraria.Recipe.Condition.NearHoney })
 				.Register();
 		}
 	}

@@ -12,13 +12,13 @@ namespace AmmunitionWorkshop.Bullets.Crimtane
 
 		public override void SetDefaults()
 		{
-			Item.damage = 22; 
+			Item.damage = 10; 
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 8;
 			Item.height = 8;
 			Item.maxStack = 999;
 			Item.consumable = true; 
-			Item.knockBack = 3.5f;
+			Item.knockBack = 2.6f;
 			Item.value = 10;
 			Item.rare = ItemRarityID.Green;
 			Item.shoot = ModContent.ProjectileType<CrimtaneBulletP>();
@@ -30,7 +30,8 @@ namespace AmmunitionWorkshop.Bullets.Crimtane
 		public override void AddRecipes()
 		{
 			CreateRecipe(70)
-				.AddIngredient(ItemID.AdamantiteBar)
+				.AddIngredient(ItemID.CrimtaneBar)
+				.AddIngredient(ItemID.MusketBall, 70)
 				.Register();
 		}
 	}

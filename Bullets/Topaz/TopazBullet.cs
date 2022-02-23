@@ -13,7 +13,7 @@ namespace AmmunitionWorkshop.Bullets.Topaz
 
 		public override void SetDefaults()
 		{
-			Item.damage = 8; 
+			Item.damage = 4; 
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 8;
 			Item.height = 8;
@@ -30,8 +30,8 @@ namespace AmmunitionWorkshop.Bullets.Topaz
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes()
 		{
-			CreateRecipe(50)
-				.AddIngredient(ItemID.Amethyst)
+			CreateRecipe(40)
+				.AddIngredient(ItemID.Topaz)
 				.Register();
 		}
 	}

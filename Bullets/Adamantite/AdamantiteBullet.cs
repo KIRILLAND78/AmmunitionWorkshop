@@ -7,13 +7,13 @@ namespace AmmunitionWorkshop.Bullets.Adamantite
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Fired bullets will ricochet and penetrate enemies up to 5 times.");
+			Tooltip.SetDefault("Fired bullets will ricochet and penetrate enemies up to 4 times.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 
 		public override void SetDefaults()
 		{
-			Item.damage = 22; 
+			Item.damage = 15; 
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 8;
 			Item.height = 8;
@@ -30,8 +30,9 @@ namespace AmmunitionWorkshop.Bullets.Adamantite
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes()
 		{
-			CreateRecipe(70)
+			CreateRecipe(100)
 				.AddIngredient(ItemID.AdamantiteBar)
+				.AddIngredient(ItemID.MusketBall, 100)
 				.Register();
 		}
 	}

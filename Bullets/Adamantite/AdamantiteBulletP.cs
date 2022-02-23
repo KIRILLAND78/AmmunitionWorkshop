@@ -23,7 +23,7 @@ namespace AmmunitionWorkshop.Bullets.Adamantite
 			Projectile.friendly = true;
 			Projectile.hostile = false;
 			Projectile.DamageType = DamageClass.Ranged; 
-			Projectile.penetrate = 5;
+			Projectile.penetrate = 4;
 			Projectile.timeLeft = 600;
 			Projectile.alpha = 0;
 			Projectile.light = 0.5f;

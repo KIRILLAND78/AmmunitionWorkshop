@@ -6,13 +6,13 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-namespace AmmunitionWorkshop.Bullets.Topaz
+namespace AmmunitionWorkshop.Bullets.Mythril
 {
-	public class TopazBulletP : ModProjectile
+	public class MythrilBulletP : ModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Topaz Bullet");
+			DisplayName.SetDefault("Mythril Bullet");
 		}
 
 		public override void SetDefaults()
@@ -30,16 +30,6 @@ namespace AmmunitionWorkshop.Bullets.Topaz
 			Projectile.light = 0.3f;
 			AIType = ProjectileID.Bullet; // Act exactly like default Bullet
 		}
-
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-        {
-			if (Main.rand.Next(1, 3) == 1)
-			{
-				Main.player[Projectile.owner].statMana += damage * 3 / 20;
-				Main.player[Projectile.owner].ManaEffect(damage * 3 / 20);
-			}
-            base.OnHitNPC(target, damage, knockback, crit);
-        }
 
         public override bool PreDraw(ref Color lightColor)
 		{

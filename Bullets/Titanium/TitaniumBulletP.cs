@@ -6,13 +6,13 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-namespace AmmunitionWorkshop.Bullets.Topaz
+namespace AmmunitionWorkshop.Bullets.Titanium
 {
-	public class TopazBulletP : ModProjectile
+	public class TitaniumBulletP : ModProjectile
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Topaz Bullet");
+			DisplayName.SetDefault("Titanium Bullet");
 		}
 
 		public override void SetDefaults()
@@ -33,11 +33,7 @@ namespace AmmunitionWorkshop.Bullets.Topaz
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
-			if (Main.rand.Next(1, 3) == 1)
-			{
-				Main.player[Projectile.owner].statMana += damage * 3 / 20;
-				Main.player[Projectile.owner].ManaEffect(damage * 3 / 20);
-			}
+			Main.player[Projectile.owner].GetModPlayer<AmmWorkhopModPl>().AddDefBoost(damage);
             base.OnHitNPC(target, damage, knockback, crit);
         }
 
