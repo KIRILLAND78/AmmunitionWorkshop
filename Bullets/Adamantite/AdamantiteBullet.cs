@@ -10,7 +10,6 @@ namespace AmmunitionWorkshop.Bullets.Adamantite
 			Tooltip.SetDefault("Fired bullets will ricochet and penetrate enemies up to 4 times.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
-
 		public override void SetDefaults()
 		{
 			Item.damage = 15; 

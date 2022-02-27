@@ -50,7 +50,6 @@ namespace AmmunitionWorkshop.Bullets.Shroomite
 					//Main.NewText(MathHelper.ToDegrees(Projectile.velocity.ToRotation()));
 					float angle = ((-Projectile.Center + target.Center).ToRotation() + ((-Projectile.Center + target.Center).ToRotation() < 0 ? MathHelper.TwoPi : 0) - Projectile.velocity.ToRotation() - (Projectile.velocity.ToRotation() < 0 ? MathHelper.TwoPi : 0) * -1) % MathHelper.TwoPi;
 					angle = angle > MathHelper.Pi ? -(MathHelper.TwoPi - angle) : angle;
-					Main.player[Main.myPlayer].GetModPlayer<AmmWorkhopModPl>().GetArrayItems();
 					Projectile.velocity = Projectile.velocity.RotatedBy(Math.Clamp(angle, (-MathHelper.Pi / 36), (MathHelper.Pi / 36)));
 
 				}
