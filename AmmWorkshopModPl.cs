@@ -13,69 +13,47 @@ namespace AmmunitionWorkshop
 {
     internal class AmmWorkhopModPl : ModPlayer
     {
-        public Item[,] bullets = new Item[3,21];
+
+        public Item[,] bullets;
         public int CurrentMode =0;
         public int CurrentAmmo = 0;
 
-        
-        //public override bool CanConsumeAmmo(Item weapon, Item ammo)
-        //{
-        //    if (weapon.ammo == AmmoID.Bullet)
-        //    {
-        //        bool listempty = true;
-        //        for (int a = 0; a < 21; a++)
-        //        {
-        //            if (bullets[CurrentAmmo, a].type != 0) listempty = false;
-        //        }
-        //        if (!listempty)
-        //        {
-        //            while (bullets[CurrentAmmo, CurrentAmmo].type == 0) CurrentAmmo++;
 
-        //            if (ammo.type == bullets[CurrentAmmo, CurrentAmmo].type)
-        //            {
-        //                CurrentAmmo++;
-        //                return base.CanConsumeAmmo(weapon, ammo);
-        //            }
-        //            else
-        //            {
-        //                return false;
-        //            }
-        //        }
-        //    }
 
-            
-
-        //    return base.CanConsumeAmmo(weapon, ammo);
-        //}
-        //public Item[] GetArrayItems()
-        //{
-        //    Item[] res = new Item[21];
-        //    for (int a=0; a < 21; a++)
-        //    {
-        //        if (bullets[CurrentMode, a] == null)
-        //        {
-        //            bullets[CurrentMode, a]=new Item();
-
-        //            //bullets[CurrentMode, a].SetDefaults(0);
-        //        }
-        //        //Main.NewText(bullets[CurrentMode, a]);
-        //        res[a] = bullets[CurrentMode, a];
-        //    }
-        //    return res;
-        //}
+        public override void PreUpdate()
+        {
+            if (AmmunitionWorkshop.changeleft.JustPressed)
+            {
+                Main.player[Main.myPlayer].GetModPlayer<AmmWorkhopModPl>().CurrentMode--;
+                if (Main.player[Main.myPlayer].GetModPlayer<AmmWorkhopModPl>().CurrentMode < 0)
+                {
+                    Main.player[Main.myPlayer].GetModPlayer<AmmWorkhopModPl>().CurrentMode = 2;
+                }
+            }
+            if (AmmunitionWorkshop.changeright.JustPressed)
+            {
+                Main.player[Main.myPlayer].GetModPlayer<AmmWorkhopModPl>().CurrentMode++;
+                if (Main.player[Main.myPlayer].GetModPlayer<AmmWorkhopModPl>().CurrentMode > 2)
+                {
+                    Main.player[Main.myPlayer].GetModPlayer<AmmWorkhopModPl>().CurrentMode = 0;
+                }
+            }
+                base.PreUpdate();
+        }
 
         public float defBoost = 0;
         public override void SaveData(TagCompound tag)
         {
+            tag.Add("amworkshop_bullet", CurrentMode);
             for (int a = 0; a < 3; a++)
             {
                 for (int b = 0; b < 21; b++)
                 {
-                    if (bullets[a, b] != null&& bullets[a, b].type!=0 )
+                    if (bullets[a, b] != null && bullets[a, b].type!=0 )
                     {
-                        Logging.PublicLogger.Debug($"Saved a key: bullet{a}_{b}. It's: {bullets[a, b].type}.");
+                        //Logging.PublicLogger.Debug($"Saved a key: bullet{a}_{b}. It's: {bullets[a, b].type}.");
 
-                        tag.Add($"bullet{a}_{b}", bullets[a,b].type);
+                        tag.Add($"bullet{a}_{b}", bullets[a,b].type);//i understand this is wrong, but i don't understand how to make it right way.
                     }
                 }
             }
@@ -83,6 +61,11 @@ namespace AmmunitionWorkshop
         }
         public override void LoadData(TagCompound tag)
         {
+            bullets = new Item[3, 21];
+            if (tag.ContainsKey("amworkshop_bullet"))
+            {
+                CurrentMode = tag.GetAsInt("amworkshop_bullet");
+            }
             for (int a = 0; a < 3; a++)
             {
                 for (int b = 0; b < 21; b++)
@@ -90,6 +73,7 @@ namespace AmmunitionWorkshop
                     bullets[a, b] = new Item();
                     if (tag.ContainsKey($"bullet{a}_{b}"))
                     {
+                        //Logging.PublicLogger.Debug($"loaded a key: bullet{a}_{b}. It's: {bullets[a, b].type}.");
                         bullets[a, b]= new Item((tag.GetAsInt($"bullet{a}_{b}")));
                         
                     }
