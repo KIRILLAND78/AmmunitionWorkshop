@@ -35,8 +35,8 @@ namespace AmmunitionWorkshop.Bullets.Amethyst
         {
 			if (Main.rand.Next(1,5) == 1)
 			{
-				Main.player[Projectile.owner].statMana += damage / 10;
-				Main.player[Projectile.owner].ManaEffect(damage / 10);
+				Main.player[Projectile.owner].statMana += damage / 20;
+				Main.player[Projectile.owner].ManaEffect(damage / 20);
 			}
             base.OnHitNPC(target, damage, knockback, crit);
         }

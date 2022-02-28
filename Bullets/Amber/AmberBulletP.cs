@@ -33,8 +33,8 @@ namespace AmmunitionWorkshop.Bullets.Amber
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
-				Main.player[Projectile.owner].statLife += damage / 10;
-			Main.player[Projectile.owner].HealEffect(damage/10);
+				Main.player[Projectile.owner].statLife += damage / 20;
+			Main.player[Projectile.owner].HealEffect(damage/20);
             base.OnHitNPC(target, damage, knockback, crit);
         }
 

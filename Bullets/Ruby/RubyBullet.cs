@@ -7,7 +7,7 @@ namespace AmmunitionWorkshop.Bullets.Ruby
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Fired will restore your mana by 40% of damage.");
+			Tooltip.SetDefault("Fired will restore your mana by 20% of damage.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 
@@ -32,6 +32,7 @@ namespace AmmunitionWorkshop.Bullets.Ruby
 		{
 			CreateRecipe(40)
 				.AddIngredient(ItemID.Ruby)
+				.AddTile(TileID.Anvils)
 				.Register();
 		}
 	}

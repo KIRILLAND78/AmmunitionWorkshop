@@ -33,8 +33,8 @@ namespace AmmunitionWorkshop.Bullets.Diamond
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
-			Main.player[Projectile.owner].statMana += damage/2;
-			Main.player[Projectile.owner].ManaEffect(damage/2);
+			Main.player[Projectile.owner].statMana += damage/4;
+			Main.player[Projectile.owner].ManaEffect(damage/4);
 			
             base.OnHitNPC(target, damage, knockback, crit);
         }

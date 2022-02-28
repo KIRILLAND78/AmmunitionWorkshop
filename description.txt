@@ -1,1 +1,12 @@
-Ammunition Workshop mod is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+Ammunition Workshop is a mod to satiate all your ammunition needs*!
+It adds around 20 new ammo types! Some comes with special mechanics!
+Bullets for mages! Bullets for freezing enemies! Bullets for all purposes!
+
+Also this mod introduces ammunition layouts mechanic**!
+Having hard time choosing between ichor and crystal bullets? Why not use both?
+Make your own ammunition layouts!
+Change your ammunition layouts with a hotkey! No need to constantly switch ammo types!
+
+*no rockets or arrows though.
+**might be bugged when using with other mods messing with projectile consumption.
+i do not guarantee flawless work.

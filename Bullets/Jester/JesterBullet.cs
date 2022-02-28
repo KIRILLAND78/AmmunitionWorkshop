@@ -33,6 +33,7 @@ namespace AmmunitionWorkshop.Bullets.Jester
 			CreateRecipe(50)
 				.AddIngredient(ItemID.Star)
 				.AddIngredient(ItemID.MusketBall, 50)
+				.AddTile(TileID.Anvils)
 				.Register();
 		}
 	}

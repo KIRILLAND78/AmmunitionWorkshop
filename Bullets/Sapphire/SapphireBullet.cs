@@ -7,7 +7,7 @@ namespace AmmunitionWorkshop.Bullets.Sapphire
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Fired will restore your mana by 20% of damage.");
+			Tooltip.SetDefault("Fired will restore your mana by 10% of damage.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 
@@ -32,6 +32,7 @@ namespace AmmunitionWorkshop.Bullets.Sapphire
 		{
 			CreateRecipe(40)
 				.AddIngredient(ItemID.Sapphire)
+				.AddTile(TileID.Anvils)
 				.Register();
 		}
 	}

@@ -32,6 +32,7 @@ namespace AmmunitionWorkshop.Bullets.Cobalt
 			CreateRecipe(300)
 				.AddIngredient(ItemID.CobaltBar)
 				.AddIngredient(ItemID.MusketBall, 300)
+				.AddTile(TileID.Anvils)
 				.Register();
 		}
 	}

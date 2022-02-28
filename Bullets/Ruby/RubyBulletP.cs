@@ -33,8 +33,8 @@ namespace AmmunitionWorkshop.Bullets.Ruby
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
-			Main.player[Projectile.owner].statMana += damage*2/5;
-			Main.player[Projectile.owner].ManaEffect(damage*2/5);
+			Main.player[Projectile.owner].statMana += damage*2/10;
+			Main.player[Projectile.owner].ManaEffect(damage*2/10);
 			
             base.OnHitNPC(target, damage, knockback, crit);
         }

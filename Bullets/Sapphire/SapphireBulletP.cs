@@ -33,8 +33,8 @@ namespace AmmunitionWorkshop.Bullets.Sapphire
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
-			Main.player[Projectile.owner].statMana += damage/ 5;
-			Main.player[Projectile.owner].ManaEffect(damage / 5);
+			Main.player[Projectile.owner].statMana += damage/ 10;
+			Main.player[Projectile.owner].ManaEffect(damage / 10);
 			
             base.OnHitNPC(target, damage, knockback, crit);
         }

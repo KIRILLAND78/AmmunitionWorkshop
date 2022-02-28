@@ -33,8 +33,8 @@ namespace AmmunitionWorkshop.Bullets.Emerald
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
-			Main.player[Projectile.owner].statMana += damage*3/10;
-			Main.player[Projectile.owner].ManaEffect(damage*3/10);
+			Main.player[Projectile.owner].statMana += damage*3/20;
+			Main.player[Projectile.owner].ManaEffect(damage*3/20);
 			
             base.OnHitNPC(target, damage, knockback, crit);
         }

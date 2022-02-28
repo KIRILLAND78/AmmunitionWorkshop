@@ -32,6 +32,7 @@ namespace AmmunitionWorkshop.Bullets.Demonite
 			CreateRecipe(70)
 				.AddIngredient(ItemID.DemoniteBar)
 				.AddIngredient(ItemID.MusketBall, 70)
+				.AddTile(TileID.Anvils)
 				.Register();
 		}
 	}

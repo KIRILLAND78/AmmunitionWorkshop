@@ -7,7 +7,7 @@ namespace AmmunitionWorkshop.Bullets.Diamond
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Fired will restore your mana by 50% of damage.\r\nAlso play Minecraft!");
+			Tooltip.SetDefault("Fired will restore your mana by 25% of damage.\r\nAlso play Minecraft!");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 
@@ -32,6 +32,7 @@ namespace AmmunitionWorkshop.Bullets.Diamond
 		{
 			CreateRecipe(40)
 				.AddIngredient(ItemID.Diamond)
+				.AddTile(TileID.Anvils)
 				.Register();
 		}
 	}

@@ -32,6 +32,7 @@ namespace AmmunitionWorkshop.Bullets.Orichalcum
 			CreateRecipe(200)
 				.AddIngredient(ItemID.OrichalcumBar)
 				.AddIngredient(ItemID.MusketBall, 200)
+				.AddTile(TileID.MythrilAnvil)
 				.Register();
 		}
 	}

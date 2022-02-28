@@ -7,7 +7,7 @@ namespace AmmunitionWorkshop.Bullets.Topaz
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Fired will restore your mana by 15% of damage with 50% chance.");
+			Tooltip.SetDefault("Fired will restore your mana by 7.5% of damage with 50% chance.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 
@@ -32,6 +32,7 @@ namespace AmmunitionWorkshop.Bullets.Topaz
 		{
 			CreateRecipe(40)
 				.AddIngredient(ItemID.Topaz)
+				.AddTile(TileID.Anvils)
 				.Register();
 		}
 	}

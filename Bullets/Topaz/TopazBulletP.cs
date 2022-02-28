@@ -35,8 +35,8 @@ namespace AmmunitionWorkshop.Bullets.Topaz
         {
 			if (Main.rand.Next(1, 3) == 1)
 			{
-				Main.player[Projectile.owner].statMana += damage * 3 / 20;
-				Main.player[Projectile.owner].ManaEffect(damage * 3 / 20);
+				Main.player[Projectile.owner].statMana += damage * 3 / 40;
+				Main.player[Projectile.owner].ManaEffect(damage * 3 / 40);
 			}
             base.OnHitNPC(target, damage, knockback, crit);
         }

@@ -33,6 +33,7 @@ namespace AmmunitionWorkshop.Bullets.Titanium
 			CreateRecipe(100)
 				.AddIngredient(ItemID.TitaniumBar)
 				.AddIngredient(ItemID.MusketBall, 100)
+				.AddTile(TileID.MythrilAnvil)
 				.Register();
 		}
 	}

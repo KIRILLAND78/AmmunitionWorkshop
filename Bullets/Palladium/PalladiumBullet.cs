@@ -32,6 +32,7 @@ namespace AmmunitionWorkshop.Bullets.Palladium
 			CreateRecipe(300)
 				.AddIngredient(ItemID.PalladiumBar)
 				.AddIngredient(ItemID.MusketBall, 300)
+				.AddTile(TileID.Anvils)
 				.Register();
 		}
 	}

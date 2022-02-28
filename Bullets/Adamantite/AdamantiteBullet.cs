@@ -32,6 +32,7 @@ namespace AmmunitionWorkshop.Bullets.Adamantite
 			CreateRecipe(100)
 				.AddIngredient(ItemID.AdamantiteBar)
 				.AddIngredient(ItemID.MusketBall, 100)
+				.AddTile(TileID.MythrilAnvil)
 				.Register();
 		}
 	}

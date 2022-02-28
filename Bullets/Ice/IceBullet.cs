@@ -32,6 +32,7 @@ namespace AmmunitionWorkshop.Bullets.Ice
 		{
 			CreateRecipe(333)
 				.AddIngredient(ItemID.FrostCore)
+				.AddTile(TileID.MythrilAnvil)
 				.Register();
 		}
 	}

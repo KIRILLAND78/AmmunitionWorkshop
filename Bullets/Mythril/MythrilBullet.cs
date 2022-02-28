@@ -32,6 +32,7 @@ namespace AmmunitionWorkshop.Bullets.Mythril
 			CreateRecipe(200)
 				.AddIngredient(ItemID.MythrilBar)
 				.AddIngredient(ItemID.MusketBall, 200)
+				.AddTile(TileID.MythrilAnvil)
 				.Register();
 		}
 	}

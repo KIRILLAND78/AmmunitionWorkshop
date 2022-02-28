@@ -32,6 +32,7 @@ namespace AmmunitionWorkshop.Bullets.Crimtane
 			CreateRecipe(70)
 				.AddIngredient(ItemID.CrimtaneBar)
 				.AddIngredient(ItemID.MusketBall, 70)
+				.AddTile(TileID.Anvils)
 				.Register();
 		}
 	}

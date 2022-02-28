@@ -7,7 +7,7 @@ namespace AmmunitionWorkshop.Bullets.Emerald
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Fired will restore your mana by 30% of damage.\r\nVillagers wouldn't approve.");
+			Tooltip.SetDefault("Fired will restore your mana by 15% of damage.\r\nVillagers wouldn't approve.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 
@@ -32,6 +32,7 @@ namespace AmmunitionWorkshop.Bullets.Emerald
 		{
 			CreateRecipe(40)
 				.AddIngredient(ItemID.Emerald)
+				.AddTile(TileID.Anvils)
 				.Register();
 		}
 	}

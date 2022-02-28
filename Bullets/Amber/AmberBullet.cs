@@ -7,7 +7,7 @@ namespace AmmunitionWorkshop.Bullets.Amber
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Fired bullets will heal you by 10% of damage on hit.");
+			Tooltip.SetDefault("Fired bullets will heal you by 5% of damage on hit.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 
@@ -32,6 +32,7 @@ namespace AmmunitionWorkshop.Bullets.Amber
 		{
 			CreateRecipe(40)
 				.AddIngredient(ItemID.Amber)
+				.AddTile(TileID.Anvils)
 				.Register();
 		}
 	}

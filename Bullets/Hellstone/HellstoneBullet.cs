@@ -32,6 +32,7 @@ namespace AmmunitionWorkshop.Bullets.Hellstone
 		{
 			CreateRecipe(70)
 				.AddIngredient(ItemID.HellstoneBar)
+				.AddTile(TileID.Anvils)
 				.Register();
 		}
 	}

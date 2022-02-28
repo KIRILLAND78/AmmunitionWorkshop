@@ -32,6 +32,7 @@ namespace AmmunitionWorkshop.Bullets.Platinum
 			CreateRecipe(70)
 				.AddIngredient(ItemID.PlatinumBar)
 				.AddIngredient(ItemID.MusketBall, 70)
+				.AddTile(TileID.Anvils)
 				.Register();
 		}
 	}

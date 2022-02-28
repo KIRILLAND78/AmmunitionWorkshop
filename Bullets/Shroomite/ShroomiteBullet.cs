@@ -33,6 +33,7 @@ namespace AmmunitionWorkshop.Bullets.Shroomite
 			CreateRecipe(60)
 				.AddIngredient(ItemID.ShroomiteBar)
 				.AddIngredient(ItemID.MusketBall,60)
+				.AddTile(TileID.MythrilAnvil)
 				.Register();
 		}
 	}

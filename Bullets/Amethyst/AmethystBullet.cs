@@ -7,7 +7,7 @@ namespace AmmunitionWorkshop.Bullets.Amethyst
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Fired will restore your mana by 10% of damage with 25% chance.");
+			Tooltip.SetDefault("Fired will restore your mana by 5% of damage with 25% chance.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 
@@ -32,6 +32,7 @@ namespace AmmunitionWorkshop.Bullets.Amethyst
 		{
 			CreateRecipe(40)
 				.AddIngredient(ItemID.Amethyst)
+				.AddTile(TileID.Anvils)
 				.Register();
 		}
 	}

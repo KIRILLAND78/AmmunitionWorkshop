@@ -32,6 +32,7 @@ namespace AmmunitionWorkshop.Bullets.Hallowed
 			CreateRecipe(333)
 				.AddIngredient(ItemID.HallowedBar)
 				.AddIngredient(ItemID.MusketBall, 333)
+				.AddTile(TileID.MythrilAnvil)
 				.Register();
 		}
 	}
