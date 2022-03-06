@@ -71,7 +71,6 @@ namespace AmmunitionWorkshop
 
                 if (player.HasItem(player.GetModPlayer<AmmWorkhopModPl>().bullets[player.GetModPlayer<AmmWorkhopModPl>().CurrentMode, player.GetModPlayer<AmmWorkhopModPl>().CurrentAmmo].type))
                 {
-                    
                     int a = 0;
                     //trash = false;
                     for (a = 0; a < player.inventory.Length; a++)
@@ -92,14 +91,17 @@ namespace AmmunitionWorkshop
                     {
                         player.GetModPlayer<AmmWorkhopModPl>().CurrentAmmo = 0;
                     }sa = a;
+
                     //at this point i don't know what am i doing with my life honestly
-                    if ((weapon.useAmmo != player.trashItem.ammo))
+                    if ((weapon.useAmmo != player.inventory[a].ammo))
                     {
+
                         dontwasteammo = 0;
                         //player.inventory[a].TurnToAir();
                     }
                     else
                     {
+
                         type = player.inventory[a].shoot;
                     }
                     base.PickAmmo(weapon, player.inventory[a], player, ref type, ref speed, ref damage, ref knockback);
