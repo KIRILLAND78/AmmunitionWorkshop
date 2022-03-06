@@ -9,6 +9,10 @@ namespace AmmunitionWorkshop.Bullets.Orichalcum
 		{
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableHM2;
+		}
 
 		public override void SetDefaults()
 		{

@@ -15,6 +15,10 @@ namespace AmmunitionWorkshop.Bullets.Mythril
 			DisplayName.SetDefault("Mythril Bullet");
 		}
 
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableHM2;
+		}
 		public override void SetDefaults()
 		{
 			Projectile.width = 1;

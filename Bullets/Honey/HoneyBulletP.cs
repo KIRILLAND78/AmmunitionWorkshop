@@ -15,6 +15,10 @@ namespace AmmunitionWorkshop.Bullets.Honey
 			DisplayName.SetDefault("Honey Bullet");
 		}
 
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableHoney;
+		}
 		public override void SetDefaults()
 		{
 			Projectile.width = 1;

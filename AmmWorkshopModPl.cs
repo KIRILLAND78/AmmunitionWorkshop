@@ -53,7 +53,11 @@ namespace AmmunitionWorkshop
                     {
                         //Logging.PublicLogger.Debug($"Saved a key: bullet{a}_{b}. It's: {bullets[a, b].type}.");
 
-                        tag.Add($"bullet{a}_{b}", bullets[a,b].type);//i understand this is wrong, but i don't understand how to make it right way.
+                        try
+                        {
+                            tag.Add($"bullet{a}_{b}", bullets[a, b].type);//i understand this is wrong, but i don't understand how to make it right way.
+                        }
+                        catch { }
                     }
                 }
             }
@@ -73,9 +77,13 @@ namespace AmmunitionWorkshop
                     bullets[a, b] = new Item();
                     if (tag.ContainsKey($"bullet{a}_{b}"))
                     {
-                        //Logging.PublicLogger.Debug($"loaded a key: bullet{a}_{b}. It's: {bullets[a, b].type}.");
-                        bullets[a, b]= new Item((tag.GetAsInt($"bullet{a}_{b}")));
-                        
+                        try//does try..catch counts as defensive programming?
+                        {//naah it probably doesn't
+
+                            //Logging.PublicLogger.Debug($"loaded a key: bullet{a}_{b}. It's: {bullets[a, b].type}.");
+                            bullets[a, b] = new Item((tag.GetAsInt($"bullet{a}_{b}")));
+                        }
+                        catch { }
                     }
                 }
             }

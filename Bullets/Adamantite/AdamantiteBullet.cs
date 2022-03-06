@@ -5,6 +5,10 @@ namespace AmmunitionWorkshop.Bullets.Adamantite
 {
 	public class AdamantiteBullet : ModItem
 	{
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableHM3;
+		}
 		public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("Fired bullets will ricochet and penetrate enemies up to 4 times.");

@@ -14,6 +14,10 @@ namespace AmmunitionWorkshop.Bullets.Ice
 		{
 			DisplayName.SetDefault("Ice Bullet");
 		}
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableIce;
+		}
 
 		public override void SetDefaults()
 		{

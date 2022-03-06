@@ -15,6 +15,10 @@ namespace AmmunitionWorkshop.Bullets.Titanium
 			DisplayName.SetDefault("Titanium Bullet");
 		}
 
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableHM3;
+		}
 		public override void SetDefaults()
 		{
 			Projectile.width = 1;

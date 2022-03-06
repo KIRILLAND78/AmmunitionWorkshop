@@ -15,6 +15,10 @@ namespace AmmunitionWorkshop.Bullets.Jester
 			DisplayName.SetDefault("Jester Bullet");
 		}
 
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableOPstar;
+		}
 		public override void SetDefaults()
 		{
 			Projectile.width = 1;

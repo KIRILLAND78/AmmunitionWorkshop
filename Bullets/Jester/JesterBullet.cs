@@ -10,6 +10,10 @@ namespace AmmunitionWorkshop.Bullets.Jester
 			Tooltip.SetDefault("Fired bullets will split in three on shot.\r\nGuns will deal only 83% of original damage.\r\nI genuinely don't know how to use those.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableOPstar;
+		}
 
 		public override void SetDefaults()
 		{

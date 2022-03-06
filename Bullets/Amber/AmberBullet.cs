@@ -5,6 +5,10 @@ namespace AmmunitionWorkshop.Bullets.Amber
 {
 	public class AmberBullet : ModItem
 	{
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableGems;
+		}
 		public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("Fired bullets will heal you by 5% of damage on hit.");

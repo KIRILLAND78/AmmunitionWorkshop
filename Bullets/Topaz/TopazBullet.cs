@@ -11,6 +11,10 @@ namespace AmmunitionWorkshop.Bullets.Topaz
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableGems;
+		}
 		public override void SetDefaults()
 		{
 			Item.damage = 4; 

@@ -10,6 +10,10 @@ namespace AmmunitionWorkshop.Bullets.Ice
 			Tooltip.SetDefault("Fired bullets reduce target's velocity.\r\nFired bullets will penetrate 1 enemy.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableIce;
+		}
 
 		public override void SetDefaults()
 		{

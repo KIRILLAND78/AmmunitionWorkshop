@@ -10,7 +10,10 @@ namespace AmmunitionWorkshop.Bullets.Titanium
 			Tooltip.SetDefault("Fired bullets give you stacking damage resistance buff.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
-
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableHM3;
+		}
 		public override void SetDefaults()
 		{
 			Item.damage = 15; 

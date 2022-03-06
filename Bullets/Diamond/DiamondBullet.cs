@@ -10,6 +10,10 @@ namespace AmmunitionWorkshop.Bullets.Diamond
 			Tooltip.SetDefault("Fired will restore your mana by 25% of damage.\r\nAlso play Minecraft!");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableGems;
+		}
 
 		public override void SetDefaults()
 		{

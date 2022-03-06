@@ -10,6 +10,10 @@ namespace AmmunitionWorkshop.Bullets.Crimtane
 {
 	public class CrimtaneBulletP : ModProjectile
 	{
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableDC;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Crimtane Bullet");

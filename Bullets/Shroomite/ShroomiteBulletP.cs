@@ -15,6 +15,10 @@ namespace AmmunitionWorkshop.Bullets.Shroomite
 		{
 			DisplayName.SetDefault("Shroomite Bullet");
 		}
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableShroom;
+		}
 
 		public override void SetDefaults()
 		{

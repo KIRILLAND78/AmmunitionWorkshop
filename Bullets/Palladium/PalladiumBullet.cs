@@ -10,6 +10,10 @@ namespace AmmunitionWorkshop.Bullets.Palladium
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableHM1;
+		}
 		public override void SetDefaults()
 		{
 			Item.damage = 11; 

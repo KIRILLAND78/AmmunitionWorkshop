@@ -14,6 +14,10 @@ namespace AmmunitionWorkshop.Bullets.Ruby
 		{
 			DisplayName.SetDefault("Ruby Bullet");
 		}
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableGems;
+		}
 
 		public override void SetDefaults()
 		{

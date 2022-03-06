@@ -10,6 +10,10 @@ namespace AmmunitionWorkshop.Bullets.Cobalt
 {
 	public class CobaltBulletP : ModProjectile
 	{
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableHM1;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Cobalt Bullet");

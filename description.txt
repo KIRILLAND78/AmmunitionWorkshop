@@ -10,3 +10,10 @@ Change your ammunition layouts with a hotkey! No need to constantly switch ammo 
 *no rockets or arrows though.
 **might be bugged when using with other mods messing with projectile consumption.
 i do not guarantee flawless work.
+
+v1.1 changelog:
+added server configs to remove undesired bullets.
+fixed bullet consumption logic (shot myself in the leg when trying optimising the logic and delete some leftover stuff).
+fixed "wip" stinger bullet - was missing right tooltip and fixed it's effect.
+if unable to load bullets from disabled mods it will not get in "AmmunitionWorkshop Error" state on player selection screen.
+did something else appearantly but i forgor.

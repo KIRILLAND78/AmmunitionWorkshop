@@ -14,6 +14,10 @@ namespace AmmunitionWorkshop.Bullets.Orichalcum
 		{
 			DisplayName.SetDefault("Orichalcum Bullet");
 		}
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableHM2;
+		}
 
 		public override void SetDefaults()
 		{

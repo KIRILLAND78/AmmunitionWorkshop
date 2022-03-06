@@ -15,12 +15,20 @@ namespace AmmunitionWorkshop
         public override bool InstancePerEntity => false;
         static int dontwasteammo = 0;
         static int sa = 0;
+        //static bool trash=false;
         public override void OnConsumedAsAmmo(Item ammo, Player player)
         {
             if (ammo.type == dontwasteammo)
             {
                 ammo.stack += 1;
-                player.inventory[sa].stack -= 1;
+                //if (trash)
+                //{
+                //    player.trashItem.stack -= 1;
+                //}
+                //else
+                //{
+                    player.inventory[sa].stack -= 1;
+                //}
             }
             base.OnConsumedAsAmmo(ammo, player);
         }
@@ -63,7 +71,9 @@ namespace AmmunitionWorkshop
 
                 if (player.HasItem(player.GetModPlayer<AmmWorkhopModPl>().bullets[player.GetModPlayer<AmmWorkhopModPl>().CurrentMode, player.GetModPlayer<AmmWorkhopModPl>().CurrentAmmo].type))
                 {
+                    
                     int a = 0;
+                    //trash = false;
                     for (a = 0; a < player.inventory.Length; a++)
                     {
                         if (player.inventory[a].type == (player.GetModPlayer<AmmWorkhopModPl>().bullets[player.GetModPlayer<AmmWorkhopModPl>().CurrentMode, player.GetModPlayer<AmmWorkhopModPl>().CurrentAmmo].type))
@@ -71,6 +81,11 @@ namespace AmmunitionWorkshop
                             //ammo = player.inventory[a];
                             break;
                         }
+                        //if (a == player.inventory.Length)
+                        //{
+
+                        //    trash = true;
+                        //}
                     }
                     player.GetModPlayer<AmmWorkhopModPl>().CurrentAmmo++;
                     if (player.GetModPlayer<AmmWorkhopModPl>().CurrentAmmo == 21)
@@ -78,7 +93,7 @@ namespace AmmunitionWorkshop
                         player.GetModPlayer<AmmWorkhopModPl>().CurrentAmmo = 0;
                     }sa = a;
                     //at this point i don't know what am i doing with my life honestly
-                    if (weapon.useAmmo!= player.inventory[a].ammo)
+                    if ((weapon.useAmmo != player.trashItem.ammo))
                     {
                         dontwasteammo = 0;
                         //player.inventory[a].TurnToAir();
@@ -89,6 +104,10 @@ namespace AmmunitionWorkshop
                     }
                     base.PickAmmo(weapon, player.inventory[a], player, ref type, ref speed, ref damage, ref knockback);
                     return;
+                }
+                else
+                {
+                    dontwasteammo = 0;
                 }
             }
 

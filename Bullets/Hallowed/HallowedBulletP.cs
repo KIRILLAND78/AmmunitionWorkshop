@@ -10,6 +10,10 @@ namespace AmmunitionWorkshop.Bullets.Hallowed
 {
 	public class HallowedBulletP : ModProjectile
 	{
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableHallowed;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Hallowed Bullet");

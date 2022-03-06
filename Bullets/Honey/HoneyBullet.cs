@@ -10,6 +10,10 @@ namespace AmmunitionWorkshop.Bullets.Honey
 			Tooltip.SetDefault("Fired bullets will inflict 'Honey' buff on you on hit.\r\nIt just works.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableHoney;
+		}
 
 		public override void SetDefaults()
 		{

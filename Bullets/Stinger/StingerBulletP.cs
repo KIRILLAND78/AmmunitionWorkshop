@@ -6,18 +6,15 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-namespace AmmunitionWorkshop.Bullets.Amethyst
+namespace AmmunitionWorkshop.Bullets.Stinger
 {
-	public class AmethystBulletP : ModProjectile
+	public class StingerBulletP : ModProjectile
 	{
-		public override bool IsLoadingEnabled(Mod mod)
-		{
-			return !ModContent.GetInstance<AMWClientConfig>().disableGems;
-		}
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Amethyst Bullet");
+			DisplayName.SetDefault("Stinger Bullet");
 		}
+		
 
 		public override void SetDefaults()
 		{
@@ -37,15 +34,19 @@ namespace AmmunitionWorkshop.Bullets.Amethyst
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
-			if (Main.rand.Next(1,5) == 1)
-			{
-				Main.player[Projectile.owner].statMana += damage / 20;
-				Main.player[Projectile.owner].ManaEffect(damage / 20);
-			}
+			target.AddBuff(BuffID.Poisoned,120);
             base.OnHitNPC(target, damage, knockback, crit);
         }
-
-        public override bool PreDraw(ref Color lightColor)
+        public override void OnHitPvp(Player target, int damage, bool crit)
+        {
+			target.AddBuff(BuffID.Poisoned, 90);
+			base.OnHitPvp(target, damage, crit);
+        }
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableSting;
+		}
+		public override bool PreDraw(ref Color lightColor)
 		{
 			Main.instance.LoadProjectile(Projectile.type);
 			Texture2D texture = TextureAssets.Projectile[Projectile.type].Value;

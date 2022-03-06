@@ -14,6 +14,10 @@ namespace AmmunitionWorkshop.Bullets.Hellstone
 		{
 			DisplayName.SetDefault("Hellstone Bullet");
 		}
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableHellstone;
+		}
 
 		public override void SetDefaults()
 		{

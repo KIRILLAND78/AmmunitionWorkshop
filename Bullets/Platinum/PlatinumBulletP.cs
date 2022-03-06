@@ -15,6 +15,10 @@ namespace AmmunitionWorkshop.Bullets.Platinum
 			DisplayName.SetDefault("Platinum Bullet");
 		}
 
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disablePHM;
+		}
 		public override void SetDefaults()
 		{
 			Projectile.width = 1;

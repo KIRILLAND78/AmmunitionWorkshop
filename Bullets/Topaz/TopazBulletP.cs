@@ -15,6 +15,10 @@ namespace AmmunitionWorkshop.Bullets.Topaz
 			DisplayName.SetDefault("Topaz Bullet");
 		}
 
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableGems;
+		}
 		public override void SetDefaults()
 		{
 			Projectile.width = 1;

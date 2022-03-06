@@ -10,6 +10,10 @@ namespace AmmunitionWorkshop.Bullets.Golden
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disablePHM;
+		}
 		public override void SetDefaults()
 		{
 			Item.damage = 10; 

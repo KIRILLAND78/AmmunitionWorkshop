@@ -1,32 +1,31 @@
 using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
-namespace AmmunitionWorkshop.Bullets.Emerald
+namespace AmmunitionWorkshop.Bullets.Stinger
 {
-	public class EmeraldBullet : ModItem
+	public class StingerBullet : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Fired will restore your mana by 15% of damage.\r\nVillagers wouldn't approve.");
+			Tooltip.SetDefault("Fired bullets will inflict poison.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
-
 		public override bool IsLoadingEnabled(Mod mod)
 		{
-			return !ModContent.GetInstance<AMWClientConfig>().disableGems;
+			return !ModContent.GetInstance<AMWClientConfig>().disableSting;
 		}
 		public override void SetDefaults()
 		{
-			Item.damage = 4; 
+			Item.damage = 9; 
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 8;
 			Item.height = 8;
 			Item.maxStack = 999;
 			Item.consumable = true; 
-			Item.knockBack = 1f;
+			Item.knockBack = 2f;
 			Item.value = 10;
 			Item.rare = ItemRarityID.Green;
-			Item.shoot = ModContent.ProjectileType<EmeraldBulletP>();
+			Item.shoot = ModContent.ProjectileType<StingerBulletP>();
 			Item.shootSpeed = 2; 
 			Item.ammo = AmmoID.Bullet;
 		}
@@ -34,9 +33,9 @@ namespace AmmunitionWorkshop.Bullets.Emerald
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes()
 		{
-			CreateRecipe(40)
-				.AddIngredient(ItemID.Emerald)
-				.AddTile(TileID.Anvils)
+			CreateRecipe(70)
+				.AddIngredient(ItemID.Stinger)
+				.AddIngredient(ItemID.MusketBall, 70)
 				.Register();
 		}
 	}

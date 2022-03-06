@@ -5,6 +5,10 @@ namespace AmmunitionWorkshop.Bullets.Amethyst
 {
 	public class AmethystBullet : ModItem
 	{
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableGems;
+		}
 		public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("Fired will restore your mana by 5% of damage with 25% chance.");

@@ -5,6 +5,10 @@ namespace AmmunitionWorkshop.Bullets.Cobalt
 {
 	public class CobaltBullet : ModItem
 	{
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableHM1;
+		}
 		public override void SetStaticDefaults()
 		{
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;

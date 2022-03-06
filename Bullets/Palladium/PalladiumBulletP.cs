@@ -15,6 +15,10 @@ namespace AmmunitionWorkshop.Bullets.Palladium
 			DisplayName.SetDefault("Palladium Bullet");
 		}
 
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableHM1;
+		}
 		public override void SetDefaults()
 		{
 			Projectile.width = 1;

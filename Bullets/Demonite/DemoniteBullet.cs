@@ -5,6 +5,10 @@ namespace AmmunitionWorkshop.Bullets.Demonite
 {
 	public class DemoniteBullet : ModItem
 	{
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableDC;
+		}
 		public override void SetStaticDefaults()
 		{
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;

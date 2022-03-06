@@ -10,6 +10,10 @@ namespace AmmunitionWorkshop.Bullets.Adamantite
 {
 	public class AdamantiteBulletP : ModProjectile
 	{
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableHM3;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Adamantite Bullet");

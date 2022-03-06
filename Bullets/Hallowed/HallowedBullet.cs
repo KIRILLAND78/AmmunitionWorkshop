@@ -10,6 +10,10 @@ namespace AmmunitionWorkshop.Bullets.Hallowed
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableHallowed;
+		}
 		public override void SetDefaults()
 		{
 			Item.damage = 15; 

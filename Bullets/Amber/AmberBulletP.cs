@@ -10,6 +10,10 @@ namespace AmmunitionWorkshop.Bullets.Amber
 {
 	public class AmberBulletP : ModProjectile
 	{
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableGems;
+		}
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Amber Bullet");
