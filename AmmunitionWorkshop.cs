@@ -133,6 +133,7 @@ namespace AmmunitionWorkshop
 			text.Left.Set(275, 0);
 			text.Width.Set(100,0);
 			panel.Append(text);
+			textstate.SetText("Ammo set: " + (Main.player[Main.myPlayer].GetModPlayer<AmmWorkhopModPl>().CurrentMode + 1).ToString());
 		}
 		private void Butt2_Click(UIMouseEvent evt, UIElement listeningElement)
 		{

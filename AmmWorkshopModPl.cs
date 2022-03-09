@@ -63,9 +63,21 @@ namespace AmmunitionWorkshop
             }
             base.SaveData(tag);
         }
-        public override void LoadData(TagCompound tag)
+        public AmmWorkhopModPl()
         {
             bullets = new Item[3, 21];
+
+            for (int a = 0; a < 3; a++)
+            {
+                for (int b = 0; b < 21; b++)
+                {
+                    bullets[a, b] = new Item(ItemID.None);
+                }
+            }
+        }
+        public override void LoadData(TagCompound tag)
+        {
+            bullets = new Item[3, 21];//issue was, LoadData for some reason have not created array of items. like wth.
             if (tag.ContainsKey("amworkshop_bullet"))
             {
                 CurrentMode = tag.GetAsInt("amworkshop_bullet");
@@ -74,7 +86,7 @@ namespace AmmunitionWorkshop
             {
                 for (int b = 0; b < 21; b++)
                 {
-                    bullets[a, b] = new Item();
+                    bullets[a, b] = new Item(ItemID.None);
                     if (tag.ContainsKey($"bullet{a}_{b}"))
                     {
                         try//does try..catch counts as defensive programming?

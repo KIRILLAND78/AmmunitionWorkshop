@@ -11,7 +11,8 @@ Change your ammunition layouts with a hotkey! No need to constantly switch ammo 
 **might be bugged when using with other mods messing with projectile consumption.
 i do not guarantee flawless work.
 
-v1.1 changelog:
+changelog:
+v1.1
 added server configs to remove undesired bullets.
 fixed bullet consumption logic (shot myself in the leg when trying optimising the logic and delete some leftover stuff).
 fixed "wip" stinger bullet - was missing right tooltip and fixed it's effect.
@@ -19,3 +20,6 @@ if unable to load bullets from disabled mods it will not get in "AmmunitionWorks
 did something else appearantly but i forgor.
 v1.1.1 quickfix
 fix logic again.
+v1.2 one update, one fix and one quickfix in less than 24 hours? this is high level incompetence from me.
+fixed the issue with loading bullets. This also fix crash when trying to save data. i am really sorry if this ruined your experince.
+added name and icon for titanium bullets buff. Also it's name now is "Gunpowder defense".
