@@ -1,3 +1,4 @@
 displayName = Ammunition Workshop mod
 author = KIRILLAND
 version = 1.2
+modReferences = UniFreezeLib

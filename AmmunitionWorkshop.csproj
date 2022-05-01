@@ -10,4 +10,9 @@
   <ItemGroup>
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UniFreezeLib">
+      <HintPath>..\..\..\tModLoader-preview\ModReader\UniFreezeLib\UniFreezeLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

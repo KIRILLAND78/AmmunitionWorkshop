@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
+using UniFreezeLib;
 using Terraria.ModLoader;
 namespace AmmunitionWorkshop.Bullets.Ice
 {
@@ -36,9 +37,20 @@ namespace AmmunitionWorkshop.Bullets.Ice
 		}
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
-			target.velocity = 0.98f* target.velocity;
+			UniFreezeLib.UniFreezeLib.FreezeNPC(target.whoAmI, 0.03f*MathF.Sqrt(damage), 400);
+			//Mod FreezeLib = ModLoader.GetMod("UniFreezeLib");
+			//if (FreezeLib != null)
+			//{
+			//	Main.NewText("loaded");
+				//FreezeLib.Call("FreezePlayer", Projectile.owner, 0.99f, 400);
+				//FreezeLib.Call("FreezeNPC", target.whoAmI, 0.99f, 400);
+			//}
+			//else
+			//{
+			//	target.velocity = 0.98f * target.velocity;
+			//}
 
-			target.GetGlobalNPC<AmmWorkshopModNpc>().Freeze(105, damage);
+			//target.GetGlobalNPC<AmmWorkshopModNpc>().Freeze(105, damage);
             base.OnHitNPC(target, damage, knockback, crit);
         }
 
