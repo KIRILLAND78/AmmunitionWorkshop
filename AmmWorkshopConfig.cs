@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using Microsoft.Xna.Framework;
 using Terraria.ModLoader.Config;
 
@@ -60,10 +61,6 @@ namespace AmmunitionWorkshop
 		[DefaultValue(false)]
 		[ReloadRequired]
 		public bool disableShroom;
-		[Label("Disable Ice bullets?")]
-		[DefaultValue(false)]
-		[ReloadRequired]
-		public bool disableIce;
 		[Label("Disable Hallowed bullets?")]
 		[DefaultValue(false)]
 		[ReloadRequired]
@@ -72,5 +69,11 @@ namespace AmmunitionWorkshop
 		[DefaultValue(false)]
 		[ReloadRequired]
 		public bool disableHellstone;
-	}
+        [Label("Disable Mecha bullets?")]
+        [DefaultValue(false)]
+        [ReloadRequired]
+        public bool disableMecha;
+
+
+    }
 }

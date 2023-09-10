@@ -6,17 +6,25 @@ using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-namespace AmmunitionWorkshop.Bullets.Stinger
+namespace AmmunitionWorkshop.Bullets.Energy
 {
-	public class StingerBulletP : ModProjectile
+	public class EnergyBulletP : ModProjectile
 	{
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			return !ModContent.GetInstance<AMWClientConfig>().disableMecha;
+		}
 		public override void SetStaticDefaults()
 		{
-			// DisplayName.SetDefault("Stinger Bullet");
+			// DisplayName.SetDefault("Mecha Bullet");
 		}
-		
 
-		public override void SetDefaults()
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            Main.player[Projectile.owner].GetModPlayer<AmmWorkhopModPl>().AddPowBoost(hit.Damage);
+            base.OnHitNPC(target, hit, damageDone);
+        }
+        public override void SetDefaults()
 		{
 			Projectile.width = 1;
 			Projectile.height = 8;
@@ -27,27 +35,11 @@ namespace AmmunitionWorkshop.Bullets.Stinger
 			Projectile.penetrate = 1;
 			Projectile.timeLeft = 600;
 			Projectile.alpha = 0;
-			Projectile.extraUpdates = 1;
-			Projectile.light = 0.3f;
+			Projectile.light = 0.5f;
 			AIType = ProjectileID.Bullet; // Act exactly like default Bullet
+			Projectile.extraUpdates = 1;
 		}
 
-        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
-        {
-			target.AddBuff(BuffID.Poisoned,120);
-            base.OnHitNPC(target, hit, damageDone);
-        }
-
-        public override void OnHitPlayer(Player target, Player.HurtInfo info)
-        {
-            target.AddBuff(BuffID.Poisoned, 90);
-            base.OnHitPlayer(target, info);
-        }
-
-		public override bool IsLoadingEnabled(Mod mod)
-		{
-			return !ModContent.GetInstance<AMWClientConfig>().disableSting;
-		}
 		public override bool PreDraw(ref Color lightColor)
 		{
 			Main.instance.LoadProjectile(Projectile.type);

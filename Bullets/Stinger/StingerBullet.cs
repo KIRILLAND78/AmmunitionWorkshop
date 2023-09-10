@@ -7,7 +7,7 @@ namespace AmmunitionWorkshop.Bullets.Stinger
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Fired bullets will inflict poison.");
+			// Tooltip.SetDefault("Fired bullets will inflict poison.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 		public override bool IsLoadingEnabled(Mod mod)

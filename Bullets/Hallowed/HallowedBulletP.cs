@@ -16,7 +16,7 @@ namespace AmmunitionWorkshop.Bullets.Hallowed
 		}
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hallowed Bullet");
+			// DisplayName.SetDefault("Hallowed Bullet");
 		}
 
 		public override void SetDefaults()

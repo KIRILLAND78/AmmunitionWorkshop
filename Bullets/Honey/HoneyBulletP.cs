@@ -12,7 +12,7 @@ namespace AmmunitionWorkshop.Bullets.Honey
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Honey Bullet");
+			// DisplayName.SetDefault("Honey Bullet");
 		}
 
 		public override bool IsLoadingEnabled(Mod mod)
@@ -34,11 +34,10 @@ namespace AmmunitionWorkshop.Bullets.Honey
 			Projectile.light = 0.3f;
 			AIType = ProjectileID.Bullet; // Act exactly like default Bullet
 		}
-
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
 			Main.player[Projectile.owner].AddBuff(BuffID.Honey, 60);
-            base.OnHitNPC(target, damage, knockback, crit);
+            base.OnHitNPC(target, hit, damageDone);
         }
 
         public override bool PreDraw(ref Color lightColor)

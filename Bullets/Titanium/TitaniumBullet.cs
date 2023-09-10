@@ -7,7 +7,7 @@ namespace AmmunitionWorkshop.Bullets.Titanium
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Fired bullets give you stacking damage resistance buff.");
+			// Tooltip.SetDefault("Fired bullets give you stacking damage resistance buff.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 		public override bool IsLoadingEnabled(Mod mod)

@@ -8,61 +8,12 @@ using Terraria.ID;
 using Terraria.ModLoader;
 namespace AmmunitionWorkshop.Bullets.Ruby
 {
-	public class RubyBulletP : ModProjectile
-	{
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Ruby Bullet");
-		}
-		public override bool IsLoadingEnabled(Mod mod)
-		{
-			return !ModContent.GetInstance<AMWClientConfig>().disableGems;
-		}
-
-		public override void SetDefaults()
-		{
-			Projectile.width = 1;
-			Projectile.height = 8;
-			Projectile.aiStyle = 1;
-			Projectile.friendly = true;
-			Projectile.hostile = false;
-			Projectile.DamageType = DamageClass.Ranged; 
-			Projectile.penetrate = 1;
-			Projectile.timeLeft = 600;
-			Projectile.alpha = 0;
-			Projectile.extraUpdates = 1;
-			Projectile.light = 0.3f;
-			AIType = ProjectileID.Bullet; // Act exactly like default Bullet
-		}
-
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+	public class RubyBulletP : GemBulletP
+    {
+        public override bool IsLoadingEnabled(Mod mod)
         {
-			Main.player[Projectile.owner].statMana += damage*2/10;
-			Main.player[Projectile.owner].ManaEffect(damage*2/10);
-			
-            base.OnHitNPC(target, damage, knockback, crit);
+            return !ModContent.GetInstance<AMWClientConfig>().disableGems;
         }
-
-        public override bool PreDraw(ref Color lightColor)
-		{
-			Main.instance.LoadProjectile(Projectile.type);
-			Texture2D texture = TextureAssets.Projectile[Projectile.type].Value;
-
-			// Redraw the projectile with the color not influenced by light
-			Vector2 drawOrigin = new Vector2(texture.Width * 0.5f, Projectile.height * 0.5f);
-				Vector2 drawPos = (Projectile.position - Main.screenPosition) + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
-				Color color = Projectile.GetAlpha(lightColor);
-				Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0);
-			
-
-			return true;
-		}
-
-		public override void Kill(int timeLeft)
-		{
-			// This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
-			Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
-			SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
-		}
-	}
+        public override string gem_name => "ruby";
+    }
 }

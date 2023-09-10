@@ -16,7 +16,7 @@ namespace AmmunitionWorkshop.Bullets.Crimtane
 		}
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Crimtane Bullet");
+			// DisplayName.SetDefault("Crimtane Bullet");
 		}
 
 		public override void SetDefaults()

@@ -7,7 +7,7 @@ namespace AmmunitionWorkshop.Bullets.Jester
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Fired bullets will split in three on shot.\r\nGuns will deal only 83% of original damage.\r\nI genuinely don't know how to use those.");
+			// Tooltip.SetDefault("Fired bullets will split in three on shot.\r\nGuns will deal only 83% of original damage.\r\nI genuinely don't know how to use those.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 		public override bool IsLoadingEnabled(Mod mod)
@@ -35,7 +35,7 @@ namespace AmmunitionWorkshop.Bullets.Jester
 		public override void AddRecipes()
 		{
 			CreateRecipe(50)
-				.AddIngredient(ItemID.Star)
+				.AddIngredient(ItemID.FallenStar)
 				.AddIngredient(ItemID.MusketBall, 50)
 				.AddTile(TileID.Anvils)
 				.Register();

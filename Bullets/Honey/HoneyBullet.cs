@@ -1,3 +1,4 @@
+using Terraria;
 using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
@@ -7,7 +8,7 @@ namespace AmmunitionWorkshop.Bullets.Honey
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Fired bullets will inflict 'Honey' buff on you on hit.\r\nIt just works.");
+			// Tooltip.SetDefault("Fired bullets will inflict 'Honey' buff on you on hit.\r\nIt just works.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 		public override bool IsLoadingEnabled(Mod mod)
@@ -36,7 +37,7 @@ namespace AmmunitionWorkshop.Bullets.Honey
 		{
 			CreateRecipe(9)
 				.AddIngredient(ItemID.MusketBall, 9)
-				.AddCondition(new Terraria.Recipe.Condition[1] { Terraria.Recipe.Condition.NearHoney })
+				.AddCondition(Condition.NearHoney)
 				.Register();
 		}
 	}

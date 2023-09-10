@@ -1,0 +1,249 @@
+Keybinds: {
+	"Call ammunition menu.DisplayName": Call ammunition menu
+	"Previous ammo set.DisplayName": Previous ammo set
+	"Next ammo set.DisplayName": Next ammo set
+}
+
+Buffs: {
+	DefenceBoost: {
+		DisplayName: Defence Boost
+		Description: Mods.AmmunitionWorkshop.Buffs.DefenceBoost.Description
+	}
+
+	PowerBoost: {
+		DisplayName: Power Boost
+		Description: Mods.AmmunitionWorkshop.Buffs.PowerBoost.Description
+	}
+}
+
+Items: {
+	AdamantiteBullet: {
+		DisplayName: Adamantite Bullet
+		Tooltip: ""
+	}
+
+	AmberBullet: {
+		DisplayName: Amber Bullet
+		Tooltip: ""
+	}
+
+	AmethystBullet: {
+		DisplayName: Amethyst Bullet
+		Tooltip: ""
+	}
+
+	CobaltBullet: {
+		DisplayName: Cobalt Bullet
+		Tooltip: ""
+	}
+
+	CrimtaneBullet: {
+		DisplayName: Crimtane Bullet
+		Tooltip: ""
+	}
+
+	DemoniteBullet: {
+		DisplayName: Demonite Bullet
+		Tooltip: ""
+	}
+
+	DiamondBullet: {
+		DisplayName: Diamond Bullet
+		Tooltip: Also try Minecraft!
+	}
+
+	EmeraldBullet: {
+		DisplayName: Emerald Bullet
+		Tooltip: Villagers wouldn't approve.
+	}
+
+	EnergyBullet: {
+		DisplayName: Energy Bullet
+		Tooltip: ""
+	}
+
+	GoldenBullet: {
+		DisplayName: Golden Bullet
+		Tooltip: ""
+	}
+
+	HallowedBullet: {
+		DisplayName: Hallowed Bullet
+		Tooltip: ""
+	}
+
+	HellstoneBullet: {
+		DisplayName: Hellstone Bullet
+		Tooltip: ""
+	}
+
+	HoneyBullet: {
+		DisplayName: Honey Bullet
+		Tooltip: ""
+	}
+
+	JesterBullet: {
+		DisplayName: Jester Bullet
+		Tooltip: ""
+	}
+
+	MythrilBullet: {
+		DisplayName: Mythril Bullet
+		Tooltip: ""
+	}
+
+	OrichalcumBullet: {
+		DisplayName: Orichalcum Bullet
+		Tooltip: ""
+	}
+
+	PalladiumBullet: {
+		DisplayName: Palladium Bullet
+		Tooltip: ""
+	}
+
+	PlatinumBullet: {
+		DisplayName: Platinum Bullet
+		Tooltip: ""
+	}
+
+	RubyBullet: {
+		DisplayName: Ruby Bullet
+		Tooltip: ""
+	}
+
+	SapphireBullet: {
+		DisplayName: Sapphire Bullet
+		Tooltip: ""
+	}
+
+	ShroomiteBullet: {
+		DisplayName: Shroomite Bullet
+		Tooltip: ""
+	}
+
+	StingerBullet: {
+		DisplayName: Stinger Bullet
+		Tooltip: ""
+	}
+
+	TitaniumBullet: {
+		DisplayName: Titanium Bullet
+		Tooltip: ""
+	}
+
+	TopazBullet: {
+		DisplayName: Topaz Bullet
+		Tooltip: ""
+	}
+}
+
+GenericManaBullet: {
+	Tooltip1: Will restore your mana by
+	Tooltip2: ""
+}
+
+GenericManaBulletChance: {
+	Tooltip1: Will restore your mana by
+	Tooltip2: % of damage with
+	Tooltip3: % chance
+}
+
+Projectiles: {
+	AdamantiteBulletP.DisplayName: Adamantite Bullet
+	AmberBulletP.DisplayName: Amber Bullet
+	AmethystBulletP.DisplayName: Amethyst Bullet
+	CobaltBulletP.DisplayName: Cobalt Bullet
+	CrimtaneBulletP.DisplayName: Crimtane Bullet
+	DemoniteBulletP.DisplayName: Demonite Bullet
+	DiamondBulletP.DisplayName: Diamond Bullet
+	EmeraldBulletP.DisplayName: Emerald Bullet
+	EnergyBulletP.DisplayName: Energy Bullet
+	GoldenBulletP.DisplayName: Golden Bullet
+	HallowedBulletP.DisplayName: Hallowed Bullet
+	HellstoneBulletP.DisplayName: Hellstone Bullet
+	HoneyBulletP.DisplayName: Honey Bullet
+	JesterBulletP.DisplayName: Jester Bullet
+	MythrilBulletP.DisplayName: Mythril Bullet
+	OrichalcumBulletP.DisplayName: Orichalcum Bullet
+	PalladiumBulletP.DisplayName: Palladium Bullet
+	PlatinumBulletP.DisplayName: Platinum Bullet
+	RubyBulletP.DisplayName: Ruby Bullet
+	SapphireBulletP.DisplayName: Sapphire Bullet
+	ShroomiteBulletP.DisplayName: Shroomite Bullet
+	StingerBulletP.DisplayName: Stinger Bullet
+	TitaniumBulletP.DisplayName: Titanium Bullet
+	TopazBulletP.DisplayName: Topaz Bullet
+}
+
+Configs: {
+	AMWClientConfig: {
+		DisplayName: Ammunition Workshop Client Config
+		Headers.Ammunition: Ammunition
+
+		disableGems: {
+			Label: Disable Gem bullets?
+			Tooltip: ""
+		}
+
+		disablePHM: {
+			Label: Disable Gold/Platinum bullets?
+			Tooltip: ""
+		}
+
+		disableHM1: {
+			Label: Disable tier 1 hardmode ore bullets?
+			Tooltip: ""
+		}
+
+		disableHM2: {
+			Label: Disable tier 2 hardmode ore bullets?
+			Tooltip: ""
+		}
+
+		disableHM3: {
+			Label: Disable tier 3 hardmode ore bullets?
+			Tooltip: ""
+		}
+
+		disableDC: {
+			Label: Disable Demonite/Crimtane ore bullets?
+			Tooltip: ""
+		}
+
+		disableOPstar: {
+			Label: Disable Jester bullets?
+			Tooltip: ""
+		}
+
+		disableHoney: {
+			Label: Disable Honey bullets?
+			Tooltip: ""
+		}
+
+		disableSting: {
+			Label: Disable Sting bullets?
+			Tooltip: ""
+		}
+
+		disableShroom: {
+			Label: Disable Shroomite bullets?
+			Tooltip: ""
+		}
+
+		disableHallowed: {
+			Label: Disable Hallowed bullets?
+			Tooltip: ""
+		}
+
+		disableHellstone: {
+			Label: Disable Hellstone bullets?
+			Tooltip: ""
+		}
+
+		disableMecha: {
+			Label: Disable Mecha bullets?
+			Tooltip: ""
+		}
+	}
+}

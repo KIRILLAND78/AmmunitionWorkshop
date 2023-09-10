@@ -13,7 +13,7 @@ namespace AmmunitionWorkshop.Bullets.Shroomite
 		NPC target = null;
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Shroomite Bullet");
+			// DisplayName.SetDefault("Shroomite Bullet");
 		}
 		public override bool IsLoadingEnabled(Mod mod)
 		{
@@ -42,35 +42,44 @@ namespace AmmunitionWorkshop.Bullets.Shroomite
 				int s = Dust.NewDust(Projectile.Center, 1, 1, DustID.BlueTorch, default, default, default, Color.Blue);
 				Main.dust[s].velocity = Vector2.Zero;
 				Main.dust[s].noGravity = true;
-			}
-			if ((Main.netMode == NetmodeID.Server) || (Main.netMode == NetmodeID.SinglePlayer))
-			{
+            }
+            if (Projectile.timeLeft % 10 == 0)
+            {
+                Projectile.netUpdate = true;
+            }
 				if (target != null && !target.active)
 				{
 					target = null;
 				}
-				if (target != null)
-				{
-					//Main.NewText(MathHelper.ToDegrees(Projectile.velocity.ToRotation()));
-					float angle = ((-Projectile.Center + target.Center).ToRotation() + ((-Projectile.Center + target.Center).ToRotation() < 0 ? MathHelper.TwoPi : 0) - Projectile.velocity.ToRotation() - (Projectile.velocity.ToRotation() < 0 ? MathHelper.TwoPi : 0) * -1) % MathHelper.TwoPi;
-					angle = angle > MathHelper.Pi ? -(MathHelper.TwoPi - angle) : angle;
-					Projectile.velocity = Projectile.velocity.RotatedBy(Math.Clamp(angle, (-MathHelper.Pi / 36), (MathHelper.Pi / 36)));
-
-				}
-				else
+				if (target==null)
 				{
 					NPC buffer = null;
 					float g = 0;
 					for (int i = 0; i < Main.maxNPCs; i++)
 					{
-						if (Vector2.Distance(Main.npc[i].Center, Projectile.Center) <= 200 && Main.npc[i].active && !Main.npc[i].friendly && Main.npc[i].type != NPCID.TargetDummy)
+						if (Vector2.Distance(Main.npc[i].Center, Projectile.Center) <= 200 && Main.npc[i].active && !Main.npc[i].friendly&& !Main.npc[i].immortal && !Main.npc[i].isLikeATownNPC && (!Main.npc[i].GetGlobalNPC<AmmWorkshopModNpc>().CanBeHitByProjectileB(Main.npc[i],Projectile)) && Main.npc[i].type != NPCID.TargetDummy)
 							if (g < Vector2.Distance(Main.npc[i].Center, Projectile.Center)) buffer = Main.npc[i];
 
 					}
 					target = buffer;
 				}
-			}
+				else
+				{
+                    Projectile.netUpdate = true;
+                }
 
+                if (target != null)
+                {
+                    Projectile.ai[0] = target.whoAmI;
+                }
+            if (target != null)
+            {
+                //Main.NewText(MathHelper.ToDegrees(Projectile.velocity.ToRotation()));
+                float angle = ((-Projectile.Center + target.Center).ToRotation() + ((-Projectile.Center + target.Center).ToRotation() < 0 ? MathHelper.TwoPi : 0) - Projectile.velocity.ToRotation() - (Projectile.velocity.ToRotation() < 0 ? MathHelper.TwoPi : 0) * -1) % MathHelper.TwoPi;
+                angle = angle > MathHelper.Pi ? -(MathHelper.TwoPi - angle) : angle;
+                Projectile.velocity = Projectile.velocity.RotatedBy(Math.Clamp(angle, (-MathHelper.Pi / 36), (MathHelper.Pi / 36)));
+
+            }
 
             base.AI();
         }

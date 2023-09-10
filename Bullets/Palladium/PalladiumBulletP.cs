@@ -12,7 +12,7 @@ namespace AmmunitionWorkshop.Bullets.Palladium
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Palladium Bullet");
+			// DisplayName.SetDefault("Palladium Bullet");
 		}
 
 		public override bool IsLoadingEnabled(Mod mod)

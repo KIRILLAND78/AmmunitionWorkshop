@@ -5,7 +5,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.ID;
-using UniFreezeLib;
 using Terraria.ModLoader;
 namespace AmmunitionWorkshop.Bullets.Ice
 {
@@ -13,11 +12,12 @@ namespace AmmunitionWorkshop.Bullets.Ice
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Ice Bullet");
+			// DisplayName.SetDefault("Ice Bullet");
 		}
 		public override bool IsLoadingEnabled(Mod mod)
 		{
-			return !ModContent.GetInstance<AMWClientConfig>().disableIce;
+			return false;
+			//return !ModContent.GetInstance<AMWClientConfig>().disableIce;
 		}
 
 		public override void SetDefaults()
@@ -35,9 +35,9 @@ namespace AmmunitionWorkshop.Bullets.Ice
 			AIType = ProjectileID.Bullet; // Act exactly like default Bullet
 			Projectile.extraUpdates = 1;
 		}
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-			UniFreezeLib.UniFreezeLib.FreezeNPC(target.whoAmI, 0.03f*MathF.Sqrt(damage), 400);
+			//UniFreezeLib.UniFreezeLib.FreezeNPC(target.whoAmI, 0.03f*MathF.Sqrt(hit.Damage), 400);
 			//Mod FreezeLib = ModLoader.GetMod("UniFreezeLib");
 			//if (FreezeLib != null)
 			//{
@@ -51,7 +51,7 @@ namespace AmmunitionWorkshop.Bullets.Ice
 			//}
 
 			//target.GetGlobalNPC<AmmWorkshopModNpc>().Freeze(105, damage);
-            base.OnHitNPC(target, damage, knockback, crit);
+            base.OnHitNPC(target, hit, damageDone);
         }
 
 

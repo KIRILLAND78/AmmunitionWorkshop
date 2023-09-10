@@ -7,7 +7,7 @@ namespace AmmunitionWorkshop.Bullets.Shroomite
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Fired bullets will chase after your enemies and penetrate them once.");
+			// Tooltip.SetDefault("Fired bullets will chase after your enemies and penetrate them once.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 

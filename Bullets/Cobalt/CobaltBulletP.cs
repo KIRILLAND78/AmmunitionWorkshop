@@ -16,7 +16,7 @@ namespace AmmunitionWorkshop.Bullets.Cobalt
 		}
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Cobalt Bullet");
+			// DisplayName.SetDefault("Cobalt Bullet");
 		}
 
 		public override void SetDefaults()

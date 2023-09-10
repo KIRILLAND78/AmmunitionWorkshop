@@ -12,7 +12,7 @@ namespace AmmunitionWorkshop.Bullets.Golden
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Golden Bullet");
+			// DisplayName.SetDefault("Golden Bullet");
 		}
 
 		public override bool IsLoadingEnabled(Mod mod)

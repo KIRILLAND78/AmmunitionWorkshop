@@ -16,7 +16,7 @@ namespace AmmunitionWorkshop.Bullets.Adamantite
 		}
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Adamantite Bullet");
+			// DisplayName.SetDefault("Adamantite Bullet");
 		}
 
 		public override void SetDefaults()

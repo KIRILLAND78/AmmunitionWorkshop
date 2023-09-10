@@ -7,7 +7,7 @@ namespace AmmunitionWorkshop.Bullets.Hellstone
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Fired bullets will inflict 'On Fire!'.");
+			// Tooltip.SetDefault("Fired bullets will inflict 'On Fire!'.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 		public override bool IsLoadingEnabled(Mod mod)

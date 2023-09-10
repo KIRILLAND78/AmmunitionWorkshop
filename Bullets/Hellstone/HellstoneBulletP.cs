@@ -12,7 +12,7 @@ namespace AmmunitionWorkshop.Bullets.Hellstone
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Hellstone Bullet");
+			// DisplayName.SetDefault("Hellstone Bullet");
 		}
 		public override bool IsLoadingEnabled(Mod mod)
 		{
@@ -35,15 +35,15 @@ namespace AmmunitionWorkshop.Bullets.Hellstone
 			AIType = ProjectileID.Bullet; // Act exactly like default Bullet
 		}
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
 			target.AddBuff(BuffID.OnFire,120);
-            base.OnHitNPC(target, damage, knockback, crit);
+            base.OnHitNPC(target, hit, damageDone);
         }
-        public override void OnHitPvp(Player target, int damage, bool crit)
+        public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-			target.AddBuff(BuffID.OnFire, 90);
-			base.OnHitPvp(target, damage, crit);
+            target.AddBuff(BuffID.OnFire, 90);
+            base.OnHitPlayer(target, info);
         }
 
         public override bool PreDraw(ref Color lightColor)

@@ -12,7 +12,7 @@ namespace AmmunitionWorkshop.Bullets.Titanium
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Titanium Bullet");
+			// DisplayName.SetDefault("Titanium Bullet");
 		}
 
 		public override bool IsLoadingEnabled(Mod mod)
@@ -35,10 +35,10 @@ namespace AmmunitionWorkshop.Bullets.Titanium
 			AIType = ProjectileID.Bullet; // Act exactly like default Bullet
 		}
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-			Main.player[Projectile.owner].GetModPlayer<AmmWorkhopModPl>().AddDefBoost(damage);
-            base.OnHitNPC(target, damage, knockback, crit);
+			Main.player[Projectile.owner].GetModPlayer<AmmWorkhopModPl>().AddDefBoost(hit.Damage);
+            base.OnHitNPC(target, hit, damageDone);
         }
 
         public override bool PreDraw(ref Color lightColor)

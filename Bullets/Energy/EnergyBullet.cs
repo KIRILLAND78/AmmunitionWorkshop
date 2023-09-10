@@ -1,17 +1,22 @@
 using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
-namespace AmmunitionWorkshop.Bullets.Adamantite
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.DataStructures;
+namespace AmmunitionWorkshop.Bullets.Energy
 {
-	public class AdamantiteBullet : ModItem
+	public class EnergyBullet : ModItem
 	{
 		public override bool IsLoadingEnabled(Mod mod)
 		{
-			return !ModContent.GetInstance<AMWClientConfig>().disableHM3;
+			return !ModContent.GetInstance<AMWClientConfig>().disableMecha;
 		}
 		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("Fired bullets will ricochet and penetrate enemies up to 4 times.");
+        {
+            Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 4));
+            ItemID.Sets.AnimatesAsSoul[Item.type] = true;
+            // Tooltip.SetDefault("Fired bullets will increase your damage up to 35%.");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99;
 		}
 		public override void SetDefaults()
@@ -25,7 +30,7 @@ namespace AmmunitionWorkshop.Bullets.Adamantite
 			Item.knockBack = 3.5f;
 			Item.value = 10;
 			Item.rare = ItemRarityID.Green;
-			Item.shoot = ModContent.ProjectileType<AdamantiteBulletP>();
+			Item.shoot = ModContent.ProjectileType<EnergyBulletP>();
 			Item.shootSpeed = 6; 
 			Item.ammo = AmmoID.Bullet;
 		}

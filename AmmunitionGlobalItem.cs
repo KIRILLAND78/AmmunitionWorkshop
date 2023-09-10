@@ -16,7 +16,8 @@ namespace AmmunitionWorkshop
         static int dontwasteammo = 0;
         static int sa = 0;
         //static bool trash=false;
-        public override void OnConsumedAsAmmo(Item ammo, Player player)
+        
+        public override void OnConsumedAsAmmo(Item ammo, Item weapon, Player player)
         {
             if (ammo.type == dontwasteammo)
             {
@@ -30,9 +31,9 @@ namespace AmmunitionWorkshop
                     player.inventory[sa].stack -= 1;
                 //}
             }
-            base.OnConsumedAsAmmo(ammo, player);
+            base.OnConsumedAsAmmo(ammo, weapon, player);
         }
-        public override void PickAmmo(Item weapon, Item ammo, Player player, ref int type, ref float speed, ref int damage, ref float knockback)
+        public override void PickAmmo(Item weapon, Item ammo, Player player, ref int type, ref float speed, ref StatModifier damage, ref float knockback)
         {
             dontwasteammo = 0;
             bool listempty = true;
@@ -115,6 +116,6 @@ namespace AmmunitionWorkshop
 
             base.PickAmmo(weapon, ammo, player, ref type, ref speed, ref damage, ref knockback);
         }
-
+        
     }
 }

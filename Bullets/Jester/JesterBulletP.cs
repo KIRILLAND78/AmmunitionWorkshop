@@ -12,7 +12,7 @@ namespace AmmunitionWorkshop.Bullets.Jester
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Jester Bullet");
+			// DisplayName.SetDefault("Jester Bullet");
 		}
 
 		public override bool IsLoadingEnabled(Mod mod)

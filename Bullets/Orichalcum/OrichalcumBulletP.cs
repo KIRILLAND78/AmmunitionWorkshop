@@ -12,7 +12,7 @@ namespace AmmunitionWorkshop.Bullets.Orichalcum
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Orichalcum Bullet");
+			// DisplayName.SetDefault("Orichalcum Bullet");
 		}
 		public override bool IsLoadingEnabled(Mod mod)
 		{

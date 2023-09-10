@@ -12,7 +12,7 @@ namespace AmmunitionWorkshop.Bullets.Mythril
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Mythril Bullet");
+			// DisplayName.SetDefault("Mythril Bullet");
 		}
 
 		public override bool IsLoadingEnabled(Mod mod)

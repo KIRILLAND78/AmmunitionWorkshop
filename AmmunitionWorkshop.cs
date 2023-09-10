@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria.GameContent.UI.Elements;
 using AmmunitionWorkshop.UI;
+using Terraria.UI.Chat;
 
 namespace AmmunitionWorkshop
 {
@@ -46,7 +47,7 @@ namespace AmmunitionWorkshop
 
 		public override void UpdateUI(GameTime gameTime)
 		{
-			if (AmmunitionWorkshop.menukeybind.JustPressed)
+			if (AmmunitionWorkshop.menukeybind.JustPressed && (Main.drawingPlayerChat == false))
             {
 				if (MyInterface?.CurrentState != null)
 				{
@@ -116,13 +117,13 @@ namespace AmmunitionWorkshop
 				//panel.Append(slotty);
 			}
 			UIImageButton left = new UIImageButton(Terraria.GameContent.TextureAssets.ScrollLeftButton);
-			left.OnClick += Butt1_Click;
+			left.OnLeftClick += Butt1_Click;
 			left.Top.Set(20, 0);
 			left.Left.Set(275, 0);
 			panel.Append(left);
 
 			UIImageButton right = new UIImageButton(Terraria.GameContent.TextureAssets.ScrollRightButton);
-			right.OnClick += Butt2_Click;
+			right.OnLeftClick += Butt2_Click;
 			right.Top.Set(20, 0);
 			right.Left.Set(360, 0);
 			panel.Append(right);

@@ -16,7 +16,7 @@ namespace AmmunitionWorkshop.Bullets.Demonite
 		}
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Demonite Bullet");
+			// DisplayName.SetDefault("Demonite Bullet");
 		}
 
 		public override void SetDefaults()

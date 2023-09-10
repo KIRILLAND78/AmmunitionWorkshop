@@ -12,7 +12,7 @@ namespace AmmunitionWorkshop.Bullets.Platinum
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Platinum Bullet");
+			// DisplayName.SetDefault("Platinum Bullet");
 		}
 
 		public override bool IsLoadingEnabled(Mod mod)
